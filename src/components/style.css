@@ -1,0 +1,49 @@
+/* Shared styles for both forms */
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  /* Specific styles for login form */
+  .login-container {
+    text-align: center;
+  }
+  
+  .login-container h2 {
+    margin-bottom: 15px;
+  }
+  
+  /* Specific styles for signup form */
+  .signup-container {
+    text-align: center;
+  }
+  
+  .signup-container h2 {
+    margin-bottom: 15px;
+  }
+  

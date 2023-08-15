@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './style.css';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Add logic to handle login, such as sending data to a backend server
+  };
+
   return (
     <div>
-      <h2>Login</h2>
-      {/* Add your login form here */}
+      <h2 >Login</h2>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
     </div>
   );
 };
