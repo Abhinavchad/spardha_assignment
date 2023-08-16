@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import './style.css';
 
 const LoginForm = () => {
@@ -47,7 +47,7 @@ const LoginForm = () => {
         </div>
         <button className="signup-button" type="submit">Login</button>
       </form>
-      <h5>Don't have an account? <Link to='/SignUp'> signUp </Link></h5>
+      
     </div>
   );
 };
