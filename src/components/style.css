@@ -9,7 +9,6 @@
   margin: 0 auto;
 }
 
-/* Additional styles for the form */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -37,4 +36,10 @@ button {
   cursor: pointer;
 }
 
-/* ... (your existing styles) */
+.login-container {
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 15px;
+}

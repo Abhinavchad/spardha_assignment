@@ -22,10 +22,10 @@ const LoginForm = () => {
 
   return (
     <div className='auth-box'>
-      <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}} className="signup-container">
+      <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}} className="login-container">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className='input-group'>
             <label htmlFor="username">Username:</label>
             <input
               type="text"
@@ -35,7 +35,7 @@ const LoginForm = () => {
               required
             />
           </div>
-          <div>
+          <div className='input-group'>
             <label htmlFor="password">Password:</label>
             <input
               type="password"
@@ -47,9 +47,8 @@ const LoginForm = () => {
           </div>
           <button className="signup-button" type="submit">Login</button>
         </form>
-      
       </div>
-      </div>
+    </div>
   );
 };
 

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './styes.css';
 import './App.css';
+import backgroundImg from './pic4.jpg';
 
 function App() {
   const [isSignup, setIsSignup] = useState(true);
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Router>
-      <div className='app-container'>
+       <div className='app-container' style={{ backgroundImage: `url(${backgroundImg})`}}>
         <h1 id='title'>SPARDHA 2023</h1>
         <div className='auth-container'>
           {isSignup ? (
@@ -23,9 +23,9 @@ function App() {
             <Login />
           )}
           <p>
-            {isSignup
-              ? "Already have an account? "
-              : "Don't have an account? "}
+            <span style={{ color: 'white' }}>
+              {isSignup ? "Already have an account? " : "Don't have an account? "}
+            </span>
             <button className='switch-button' onClick={handleSwitch}>
               {isSignup ? 'Login' : 'Sign Up'}
             </button>
