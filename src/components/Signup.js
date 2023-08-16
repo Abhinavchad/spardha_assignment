@@ -1,36 +1,76 @@
 import React, { useState } from 'react';
-import './style.css';
-const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleSignup = (e) => {
+const Signup = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle signup, such as sending data to a backend server
+    // Handle form submission (e.g., send data to a backend server)
+    console.log(formData);
+    // Reset form fields
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   return (
-    <div>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
+    <div className='auth-box'>
+      <h2>Signup</h2>
+      <form onSubmit={handleSubmit}>
         <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type='text'
+          name='firstName'
+          placeholder='First Name'
+          value={formData.firstName}
+          onChange={handleChange}
           required
         />
         <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          type='text'
+          name='lastName'
+          placeholder='Last Name'
+          value={formData.lastName}
+          onChange={handleChange}
           required
         />
-        <button type="submit">Sign Up</button>
+        <input
+          type='email'
+          name='email'
+          placeholder='Email'
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type='password'
+          name='password'
+          placeholder='Password'
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+        <button type='submit'>Sign Up</button>
       </form>
+      <p>Already have an account? <a href='/login'>Login</a></p>
     </div>
   );
 };
 
 export default Signup;
+
